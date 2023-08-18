@@ -1,0 +1,1 @@
+c25b4c4893eb7763e481ee8daaa373103d85b996e11c451d16e3344f68bcf3c0  ./target/wasm32-unknown-unknown/release/cw_nride_registry.wasm
