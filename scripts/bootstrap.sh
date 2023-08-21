@@ -11,8 +11,8 @@ source ${__dir}/nride-token/init-cw20.sh 1
 source ${__dir}/registry/deploy-registry.sh
 source ${__dir}/registry/init-registry.sh 2
 
-source ${__dir}/feegrant/feegrant-create.sh alice
-source ${__dir}/feegrant/feegrant-create.sh bob
+# source ${__dir}/feegrant/feegrant-create.sh alice
+# source ${__dir}/feegrant/feegrant-create.sh bob
 
-source ${__dir}/nride-token/token-send.sh faucet alice 1000
-source ${__dir}/nride-token/token-send.sh faucet bob 1000
+# source ${__dir}/nride-token/token-send.sh faucet alice 1000
+# source ${__dir}/nride-token/token-send.sh faucet bob 1000

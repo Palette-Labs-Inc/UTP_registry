@@ -88,7 +88,7 @@ stop-node:
 # deploy and intialize the contracts
 # create grants for alice and bob accounts so that they can submit tx to the blockchain
 # give some NRIDE tokens to alice and bob
-demo-bootstrap:
+bootstrap:
 	./scripts/bootstrap.sh
 
 demo-create:
