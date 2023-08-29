@@ -69,9 +69,6 @@ export BOB_SECRET= cde73ee8f8584c54ac455c941f75990f4bff47a4340023e3fd236344e9a7d
 compile-cw20:
 	./scripts/compile-workspace.sh "$(shell pwd)/cw-plus"
 
-compile-escrow:
-	./scripts/compile.sh "$(shell pwd)/cw-nride-escrow"
-
 compile-registry:
 	./scripts/compile.sh "$(shell pwd)/cw-nride-registry"
 
@@ -86,57 +83,8 @@ stop-node:
 #############################
 
 # deploy and intialize the contracts
-# create grants for alice and bob accounts so that they can submit tx to the blockchain
-# give some NRIDE tokens to alice and bob
 bootstrap:
 	./scripts/bootstrap.sh
-
-demo-create:
-	./scripts/escrow/escrow-create.sh alice test bob $(ALICE_LOCK)
-
-demo-topup:
-	./scripts/escrow/escrow-topup.sh bob test $(BOB_LOCK)
-
-demo-approve-alice:
-	./scripts/escrow/escrow-approve.sh alice test $(BOB_SECRET)
-
-demo-approve-bob:
-	./scripts/escrow/escrow-approve.sh bob test $(ALICE_SECRET)
-
-demo-cancel-alice:
-	./scripts/escrow/escrow-cancel.sh alice test
-
-demo-cancel-bob:
-	./scripts/escrow/escrow-cancel.sh bob test
-
-demo-withdraw:
-	./scripts/escrow/escrow-withdraw.sh bob test
-
-demo-details:
-	./scripts/escrow/escrow-details.sh test
-
-#############################
-
-escrow-create:
-	./scripts/escrow/escrow-create.sh $(from) $(id) $(userb) $(ALICE_LOCK) 
-
-escrow-topup:
-	./scripts/escrow/escrow-topup.sh $(from) $(id) $(BOB_LOCK)
-
-escrow-approve:
-	./scripts/escrow/escrow-approve.sh $(from) $(id) $(secret)
-
-escrow-cancel:
-	./scripts/escrow/escrow-cancel.sh $(from) $(id)
-
-escrow-withdraw:
-	./scripts/escrow/escrow-withdraw.sh $(from) $(id)
-
-escrow-list:
-	./scripts/escrow/escrow-list.sh
-
-escrow-details:
-	./scripts/escrow/escrow-details.sh $(id)
 
 #############################
 
@@ -242,24 +190,15 @@ registry-subscribe:
 registry-details:
 	./scripts/registry/registry-details.sh $(addr)
 
-# ex: make registry-list location=paris
-registry-list:
-	./scripts/registry/registry-list.sh $(location)
-
-# ex: make registry-list-multiple locations=paris,london
-registry-list-multiple:
-	./scripts/registry/registry-list-multiple.sh $(locations)	
-
 registry-query-area:
 	./scripts/registry/registry-query-area.sh $(coordinate)
 
 registry-all:
 	./scripts/registry/registry-all.sh
 
-data-prepare:
-	./scripts/registry/data-prepare.sh
-
 ################################
 
 add-new-user:
-	./scripts/add-new-user.sh $(name) $(nkn) $(location)
+	./scripts/add-new-user.sh $(name) $(callback_url) $(industry_code) $(operate_type) $(nkn) $(location) 
+
+	

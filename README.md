@@ -1,5 +1,5 @@
 # UTP_registry
-This repo is built based on rRide smart contracts(https://github.com/nride/nride-sc). It implements the registry infrastructure for the universal transaction protocol. The Registry Infrastructure stores identity, industry, and coverage information about Node operators.
+This repo is built based on rRide smart contracts(https://github.com/nride/nride-sc). It implements the registry infrastructure for the universal transaction protocol. The registry infrastructure stores identity, industry, and coverage information about node operators.
 
 ## Overview
 ### Node operators
@@ -10,7 +10,7 @@ Node operators are businesses, non-profits, foundations, individuals, applicatio
 - Courier Supporting Node Operators support the courier side of the network and are defined by the three letter enumerated string ***CSN***
 
 ### Table
-Once all checks are passed, the Registrar creates an entry for the participant on the Registry with the status as VERIFIED. Below is an example of the table.
+Below is an example of the table.
 
 |   reg_address     |   name      |         callbackUrl          | servicable_polygon | industry_code |    operate_type
 |---------------------------------------------|-------------|----------------------------------------|-------------------|---------------|-------------|
@@ -75,7 +75,7 @@ make bootstrap
 
 #### Register a new record
 ```
-make add-new-user name=test callback=test.org industry=FOOD operate=UNO nkn=blahblahblah location="[[40.56334,-74.88527],[40.29154,-74.81935],[40.30411,-74.4568],[40.47147,-74.50624]]"
+make add-new-user name=alice callback_url=alice.com industry_code=FOOD operate_type=UNO nkn=test location="[[41.05603,-75.57191],[40.50698,-76.34096],[39.7721,-75.15993],[40.04599,-74.59962],[41.14296,-74.42384],[41.27107,-74.95119],[41.06017,-75.38515],[40.96898,-75.45656]]" 
 ```
 Note: no space in the polygon string
 #### Query all registered records
